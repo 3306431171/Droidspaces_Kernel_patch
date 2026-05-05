@@ -60,9 +60,27 @@
               
             # 修复 [✗] devtmpfs support
               echo "CONFIG_DEVTMPFS=y" >> ./common/arch/arm64/configs/gki_defconfig
+      - name: 注入NTsync内核配置
+        run: |
+            cd kernel_workspace/common
+            wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch"
+            wget "https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android15-6.6.patch"
+            patch -p1 < 'ntsync_base.patch'
+            patch -p1 < 'ntsync_compat_android15-6.6.patch'            
+            cd ../
+            #开启NTsync内核配置
+            echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
+
 ```
 ![第四步](./Image/OKI_3.jpg)
 ### 4.手动触发Actions的对应工作流，等待20min左右的AK3出炉
+####建议配置
+1. KernelSU分支选择none,关闭susfs
+2. 安装 lz4 1.10.0+zstd 1.5.7 补丁
+3. 开启网络功能拓展配置(用于为ipset及需要iptables等高级网络功能内核支持的程序提供支持)
+4. 启用ADIOS IO调度器支持(提升IO读写性能)
+5. 关闭启内核级基带保护(阻止一切对非用户分区的写入，有效防止格机)
+6. 其他保持默认
 - 刷入Ak3包，运行 `Droidspaces` 检查，并运行容器，设备长时间运行并不崩溃，则为 ✅完美运行
 - 如果卡一屏，开不了机，但是测试通过的机型，可以检查哪一步出错，还是Actions配置选错
 - 如果卡一屏，开不了机, 而且是内核版本有通过的机型，但本身不是测试通过的机型，并严格按照本教程来，可以测试`Droidspaces`给出的sysvipc的其他补丁1_2_3,3_4_5,5_6_7
