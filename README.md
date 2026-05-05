@@ -89,6 +89,15 @@
 > `GKI` 只代表米系设备经过验证,但其他设备应该也可以
 >
 > `💡Droidspaces` 所要文件 [点我跳转](https://cdn.goldzxcbug.top/%E7%A7%BB%E5%8A%A8-Droidspaces-OSS)
+
+# 内核编译指南
+> [!IMPORTANT]
+> 如果你是新手，你可以按照下面两个指南来编译属于你自己的内核
+>- [OKI内核云编译指南](./doc/OKI_kernel.md)
+>
+>- [GKI内核云编译指南](./doc/GKI_kernel.md)
+
+
 ## Droidspaecs ≥ v5.9.5 所要配置
 ```txt
 # IPC
