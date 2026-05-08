@@ -1,83 +1,17 @@
-<table>
-  <thead>
-    <tr>
-      <th width="10%">内核系列</th>
-      <th width="8%">版本</th>
-      <th width="12%">状态</th>
-      <th width="30%">说明</th>
-      <th width="20%">NTsync 所需补丁</th>
-      <th width="20%">测试通过的机型</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="4" align="center"><b>OKI</b></td>
-      <td align="center">6.12</td>
-      <td align="center">⚠️ 测试中</td>
-      <td>Droidspaces ≥ v5.9.5</td>
-      <td><code>仅打 android16-6.12.patch</code></td>
-      <td>• 一加 15</td>
-    </tr>
-    <tr>
-      <td align="center">6.6</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces 全版本支持</td>
-      <td><code>ntsync_base.patch</code> + <code>android15-6.6.patch</code></td>
-      <td>• 一加 Pad 2 Pro<br>• 一加 13<br>• 一加 Ace 6<br>• 一加 Ace 5 Pro<br>• 一加 13T<br>• 一加 Ace5至尊版(⚠️ 测试中)</td>
-    </tr>
-    <tr>
-      <td align="center">6.1</td>
-      <td align="center">✅ 完美运行</td>
-      <td>• Droidspaces ≥ v5.9.5：仅打 <code>04.sysvipc_task_struct.patch</code> 补丁<br>• 更低版本：打全所有补丁</td>
-      <td><code>ntsync_base.patch</code> + <code>android14-6.1.patch</code></td>
-      <td>• 一加 Ace 3 Pro<br>• 一加 12<br>• 一加 Pad Pro<br>• 真我 GT 5 Pro</td>
-    </tr>
-    <tr>
-      <td align="center">5.15</td>
-      <td align="center">✅ 完美运行</td>
-      <td>• Droidspaces ≥ v5.9.5：仅打 <code>04.sysvipc_task_struct.patch</code> 补丁<br>• 更低版本：打全所有补丁</td>
-      <td><code>ntsync_base.patch</code> + <code>android13-5.15.patch</code></td>
-      <td>• 一加 Ace 3</td>
-    </tr>
-    <tr>
-      <td rowspan="5" align="center"><b>GKI</b></td>
-      <td align="center">6.12</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces 全版本支持</td>
-      <td><code>仅打 android16-6.12.patch</code></td>
-      <td>• 红米 K90 ProMax<br>• 小米 17 Pro Max<br>• 小米 17 Pro<br>• 红魔 11<br>• 荣耀magicPad 3Pro</td>
-    </tr>
-    <tr>
-      <td align="center">6.6</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces ≥ v5.9.5</td>
-       <td><code>ntsync_base.patch</code> + <code>android15-6.6.patch</code></td>
-      <td>• 小米 Pad 8 Pro</td>
-    </tr>
-    <tr>
-      <td align="center">6.1</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces ≥ v5.9.5</td>
-      <td><code>ntsync_base.patch</code> + <code>android14-6.1.patch.patch</code></td>
-      <td>• 小米 14<br>• 红魔9SPro+<br>• 红魔9Pro</td>
-    </tr>
-    <tr>
-      <td align="center">5.15</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces ≥ v5.9.5 💥特殊<br>• 小米 Pad6S pro :使用3-4-5<br>• 红米 K70 :使用6-7-8<br>• 其他机型自行测试</td>
-      <td><code>ntsync_base.patch</code> + <code>android13-5.15.patch</code></td>
-      <td>• 小米 Pad6S Pro<br>• 红米 K70</td>
-    </tr>
-    <tr>
-      <td align="center">5.10</td>
-      <td align="center">✅ 完美运行</td>
-      <td>Droidspaces ≥ v5.9.5</td>
-       <td><code>ntsync_base.patch</code> + <code>android12-5.10.patch</code></td>
-      <td>• 小米 Pad 6 Max<br>• 小米 Pad 6 Pro<br>• 红米K50 Ultra</td>
-    </tr>
-  </tbody>
-</table>
+|OKI内核|6.12|6.6|6.1|5.15|
+|-|-|-|-|-|
+|状态|⚠️测试中|✅完美运行|✅完美运行|✅完美运行|
+|说明|Droidspaces≥v5.9.5|Droidspaces全版本支持|• Droidspaces≥v5.9.5：仅打04.sysvipc_task_struct.patch<br>• 更低版本：打全所有补丁|• Droidspaces≥v5.9.5：仅打04.sysvipc_task_struct.patch<br>• 更低版本：打全所有补丁|
+|NTsync所需补丁|仅打android16-6.12.patch|ntsync_base.patch<br>+<br>android15-6.6.patch|ntsync_base.patch<br>+<br>android14-6.1.patch|ntsync_base.patch<br>+<br>android13-5.15.patch|
+|测试通过的机型|• 一加15|• 一加Pad2Pro<br>• 一加13<br>• 一加Ace6<br>• 一加Ace5Pro<br>• 一加13T<br>• 一加Ace5至尊版(⚠️测试中)|• 一加Ace3Pro<br>• 一加12<br>• 一加PadPro<br>• 真我GT5Pro|• 一加Ace3|
 
+
+|GKI内核|6.12|6.6|6.1|5.15|5.10|
+|-|-|-|-|-|-|
+|状态|✅完美运行|✅完美运行|✅完美运行|✅完美运行|✅完美运行|
+|说明|Droidspaces全版本支持|Droidspaces≥v5.9.5|Droidspaces≥v5.9.5|Droidspaces≥v5.9.5💥特殊<br>• 小米Pad6Spro:使用3-4-5<br>• 红米K70:使用6-7-8<br>• 其他机型自行测试|Droidspaces≥v5.9.5|
+|NTsync所需补丁|仅打android16-6.12.patch|ntsync_base.patch<br>+<br>android15-6.6.patch|ntsync_base.patch<br>+<br>android14-6.1.patch|ntsync_base.patch<br>+<br>android13-5.15.patch|ntsync_base.patch<br>+<br>android12-5.10.patch|
+|测试通过的机型|• 红米K90ProMax<br>• 小米17ProMax<br>• 小米17Pro<br>• 红魔11<br>• 荣耀magicPad3Pro|• 小米Pad8Pro|• 小米14<br>• 红魔9SPro+<br>• 红魔9Pro|• 小米Pad6SPro<br>• 红米K70|• 小米Pad6Max<br>• 小米Pad6Pro<br>• 红米K50Ultra|
 
 
 > `⚠️ 测试中` 代表的是可能出现不定时重启
